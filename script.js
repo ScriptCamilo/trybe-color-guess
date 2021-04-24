@@ -16,6 +16,13 @@ function setRgbCode() {
   localStorage.setItem('answer', rgbCode);
 }
 
+function updateScore() {
+  const scoreElement = document.querySelector('#score');
+  const score = Number(document.querySelector('#score').textContent);
+
+  scoreElement.innerText = score + 3;
+}
+
 function isCorrect(event) {
   const e = event.target;
   const answer = `rgb${localStorage.getItem('answer')}`;
@@ -23,6 +30,7 @@ function isCorrect(event) {
 
   if (answer === e.style.backgroundColor) {
     answerText.innerText = 'Acertou!';
+    updateScore();
     setTimeout(() => alert('Parabéns!'), 500);
   } else {
     answerText.innerText = 'Errou! Tente novamente!';
