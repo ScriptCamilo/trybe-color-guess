@@ -15,7 +15,7 @@
   align-items: center;
 }
 
-header h1#title {
+#title {
   font-size: 38px;
 }
 
@@ -23,11 +23,11 @@ header h1#title {
   margin-top: 50px;
 }
 
-section#rgb-section #rgb-color {
+#rgb-color {
   margin-top: 15px;
 }
 
-section#ball-section #ball-list {
+#ball-list {
   display: flex;
   margin: 35px;
 }
@@ -38,4 +38,14 @@ section#ball-section #ball-list {
   width: 60px;
   border-radius: 100%;
   margin: 8px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.ball:hover {
+  border-radius: 30%;
+}
+
+#answer {
+  font-size: 22px;
 }
