@@ -9,8 +9,10 @@ function randomRgb() {
 
 function setRgbCode() {
   const rgbColor = document.querySelector('#rgb-color');
+  const answer = document.querySelector('#answer');
   const rgbCode = randomRgb();
   rgbColor.innerText = rgbCode;
+  answer.innerText = 'Escolha uma cor';
   localStorage.setItem('answer', rgbCode);
 }
 
@@ -45,13 +47,24 @@ function setCircleBall() {
     return randomRgb();
   });
 
-  console.log(ballArray);
+  ballList.innerText = '';
   ballArray.forEach((rgb) => {
     ballList.appendChild(createCircleBall(rgb));
   });
 }
 
+function resetAll() {
+  setRgbCode();
+  setCircleBall();
+}
+
+function resetButton() {
+  const button = document.querySelector('#reset-game');
+  button.addEventListener('click', resetAll);
+}
+
 window.onload = () => {
   setRgbCode();
   setCircleBall();
+  resetButton();
 };
