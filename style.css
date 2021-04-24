@@ -1,6 +1,8 @@
 * {
   margin: 0;
   padding: 0;
+  text-decoration: none;
+  list-style-type: none;
 }
 
 /* body {
@@ -19,4 +21,21 @@ header h1#title {
 
 #main-content {
   margin-top: 50px;
+}
+
+section#rgb-section #rgb-color {
+  margin-top: 15px;
+}
+
+section#ball-section #ball-list {
+  display: flex;
+  margin: 35px;
+}
+
+.ball {
+  background-color: wheat;
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+  margin: 8px;
 }

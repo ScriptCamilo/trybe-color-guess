@@ -13,11 +13,24 @@ function setRgbCode() {
   rgbColor.innerText = rgbCode;
 }
 
-function setCircleBall() {
+function createCircleBall(rgb) {
   const liBall = document.createElement('li');
+  liBall.style.backgroundColor = `rgb${rgb}`;
   liBall.classList.add('ball');
+
+  return liBall;
+}
+
+function setCircleBall() {
+  const ballList = document.querySelector('#ball-list');
+  const ballArray = new Array(6).fill(0).map(() => randomRgb());
+
+  ballArray.forEach((rgb) => {
+    ballList.appendChild(createCircleBall(rgb));
+  });
 }
 
 window.onload = () => {
   setRgbCode();
+  setCircleBall();
 };
